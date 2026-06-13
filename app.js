@@ -166,9 +166,31 @@ function fallbackData(date) {
   });
 }
 
+
+
+function formatFrenchDate(dateString) {
+  const d = new Date(dateString + "T12:00:00");
+  return d.toLocaleDateString("fr-FR", {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+}
+
+function formatFrenchDateTime(date) {
+  return date.toLocaleString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+
 function render(data) {
   document.getElementById("reportDate").textContent =
-    `Données pour le ${data.date} — mise à jour : ${new Date().toLocaleString("fr-FR")}`;
+    `Données pour le ${formatFrenchDate(data.date)} — rapport généré le ${formatFrenchDateTime(new Date())}`;
 
   document.getElementById("bestTime").textContent =
     `Meilleur moment estimé pour partir : ${data.bestHour}`;
