@@ -217,3 +217,39 @@ th, td {
     font-size: 24px;
   }
 }
+
+.datePanel {
+  background: white;
+  border-radius: 28px;
+  padding: 22px;
+  margin: 24px 0;
+  box-shadow: 0 20px 60px rgba(15,23,42,.10);
+}
+
+.datePanel label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.datePanel input,
+.datePanel button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.datePanel button {
+  background: #111827;
+  color: white;
+  font-weight: 900;
+}
+
+#bestTime {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2563eb;
+}
