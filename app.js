@@ -224,5 +224,3 @@ function render(data) {
   });
 }
 
-setupDateLimit();
-loadSelectedDate();
