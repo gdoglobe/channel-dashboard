@@ -8,81 +8,46 @@
 </head>
 <body>
   <main class="dashboard">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Channel Decision Dashboard</p>
-        <h1>Marc PLACES Manche Indicator</h1>
-        <p id="reportDate"></p>
-        <a href="https://www.instagram.com/marcplaces" target="_blank">Instagram de Marc</a>
-      </div>
-      
-<section class="datePanel">
-  <label for="datePicker">Choisir une date</label>
-  <input type="date" id="datePicker" />
- <button id="loadBtn" type="button">Charger la data</button>
-  <p id="bestTime"></p>
-</section>
-      
-      <div class="decisionBox">
-        <span>Décision</span>
-        <strong id="decision">--</strong>
-      </div>
+    <header>
+      <p class="eyebrow">Channel Decision Dashboard</p>
+      <h1>Marc PLACES Manche Indicator</h1>
+      <p id="reportDate">Chargement...</p>
+      <a href="https://www.instagram.com/marcplaces" target="_blank">Instagram de Marc</a>
     </header>
 
+    <section class="datePanel">
+      <label for="datePicker">Choisir une date</label>
+      <input type="date" id="datePicker" />
+      <button id="loadBtn" type="button">Charger la data</button>
+      <p id="bestTime">Chargement du meilleur créneau...</p>
+    </section>
+
     <section class="kpis">
-      <div class="kpi dark"><span>Score global</span><strong id="score">--</strong></div>
+      <div class="kpi"><span>Décision</span><strong id="decision">--</strong></div>
+      <div class="kpi dark"><span>Score</span><strong id="score">--</strong></div>
       <div class="kpi"><span>Vent / rafales</span><strong id="windKpi">--</strong></div>
-      <div class="kpi"><span>Marée Calais</span><strong id="tideKpi">--</strong></div>
+      <div class="kpi"><span>Vagues</span><strong id="waveKpi">--</strong></div>
+      <div class="kpi"><span>Eau</span><strong id="waterKpi">--</strong></div>
+      <div class="kpi"><span>Visibilité</span><strong id="visibilityKpi">--</strong></div>
+      <div class="kpi"><span>Courant</span><strong id="currentKpi">--</strong></div>
       <div class="kpi"><span>Faune</span><strong id="wildlifeKpi">--</strong></div>
     </section>
 
-    <section class="grid">
-      <article class="card wide">
-        <h2>Résumé décisionnel</h2>
-        <p id="summary"></p>
-      </article>
+    <section class="card">
+      <h2>Résumé décisionnel</h2>
+      <p id="summary"></p>
+    </section>
 
-      <article class="card">
-        <h2>Météo marine</h2>
-        <p id="weather"></p>
-      </article>
-
-      <article class="card">
-        <h2>Marées / courants</h2>
-        <p id="tides"></p>
-      </article>
-
-      <article class="card">
-        <h2>Points de vigilance</h2>
-        <ul id="watchItems"></ul>
-      </article>
-
-      <article class="card">
-        <h2>Risques faune</h2>
-        <p id="wildlife"></p>
-      </article>
+    <section class="card">
+      <h2>Points de vigilance</h2>
+      <ul id="watchItems"></ul>
     </section>
 
     <section class="card">
       <h2>Matrice des risques</h2>
-      <div class="tableWrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Risque</th>
-              <th>Probabilité</th>
-              <th>Impact</th>
-              <th>Niveau</th>
-            </tr>
-          </thead>
-          <tbody id="riskTable"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Sources</h2>
-      <ul id="sources"></ul>
+      <table>
+        <tbody id="riskTable"></tbody>
+      </table>
     </section>
   </main>
 
