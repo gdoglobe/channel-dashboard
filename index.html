@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Channel Crossing Dashboard</title>
+  <title>Marc PLACES Manche Indikator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <aside class="sidebar">
+    <div class="logo">MP</div>
+    <a>Dashboard</a>
+    <a>Décision</a>
+    <a>Météo</a>
+    <a>Risques</a>
+    <a>Données</a>
+  </aside>
+
   <main>
-    <h1>Channel Crossing Dashboard</h1>
+    <header>
+      <div>
+        <h1>Marc Planche Manche Indikator</h1>
+        <p id="date"></p>
+        <a class="insta" href="https://www.instagram.com/marcplaces" target="_blank">
+          Instagram de Marc
+        </a>
+      </div>
+      <button onclick="downloadJSON()">Exporter JSON</button>
+    </header>
 
     <section class="hero">
-      <div>
-        <p class="label">Décision</p>
-        <h2 id="decision">Chargement...</h2>
+      <div class="card dark">
+        <p>Décision</p>
+        <h2 id="decision">--</h2>
       </div>
-      <div>
-        <p class="label">Score</p>
+      <div class="card">
+        <p>Score global</p>
         <h2 id="score">--/100</h2>
+      </div>
+      <div class="card">
+        <p>Mission</p>
+        <h2 id="route">--</h2>
       </div>
     </section>
 
@@ -25,11 +47,6 @@
       <div class="card">
         <h3>Résumé exécutif</h3>
         <p id="summary"></p>
-      </div>
-
-      <div class="card">
-        <h3>Points de vigilance</h3>
-        <ul id="watchItems"></ul>
       </div>
 
       <div class="card">
@@ -41,21 +58,38 @@
         <h3>Risques faune</h3>
         <p id="wildlife"></p>
       </div>
+
+      <div class="card">
+        <h3>Points de vigilance</h3>
+        <ul id="watchItems"></ul>
+      </div>
     </section>
 
     <section class="card">
       <h3>Matrice des risques</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Risque</th>
-            <th>Probabilité</th>
-            <th>Impact</th>
-            <th>Niveau</th>
-          </tr>
-        </thead>
-        <tbody id="riskTable"></tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Risque</th>
+              <th>Probabilité</th>
+              <th>Impact</th>
+              <th>Niveau</th>
+            </tr>
+          </thead>
+          <tbody id="riskTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Modifier les données</h3>
+      <p>Collez un nouveau JSON ici puis cliquez sur “Mettre à jour”.</p>
+      <textarea id="jsonEditor"></textarea>
+      <div class="actions">
+        <button onclick="updateFromForm()">Mettre à jour</button>
+        <button onclick="resetData()">Réinitialiser</button>
+      </div>
     </section>
   </main>
 
