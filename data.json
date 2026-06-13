@@ -1,0 +1,151 @@
+{
+  "mission": {
+    "name": "English Channel Swim Crossing",
+    "route": "Dover / UK to French coast",
+    "planned_departure_local": "2026-06-15T07:00:00+01:00",
+    "estimated_duration_hours": {
+      "min": 10,
+      "max": 18
+    },
+    "status": "GO_CONDITIONNEL",
+    "decision_score": 68,
+    "last_updated": "2026-06-13T00:00:00+01:00"
+  },
+  "executive_decision": {
+    "recommendation": "GO_CONDITIONNEL",
+    "summary": "Fenêtre possible mais à confirmer avec le pilote, surtout à cause du vent W/SW, des courants de marée, du trafic maritime et de la température de l'eau.",
+    "critical_blockers": [],
+    "watch_items": [
+      "rafales jusqu'à environ 25 noeuds côté Calais",
+      "courants de marée forts dans le Pas-de-Calais",
+      "eau froide pour une nage longue",
+      "trafic maritime dense"
+    ]
+  },
+  "weather": {
+    "dover": {
+      "forecast_date": "2026-06-15",
+      "07h": {
+        "sky": "intermittent clouds",
+        "air_temperature_c": 14
+      },
+      "day_trend": "cloudy through most of the day",
+      "source": "weather_forecast"
+    },
+    "calais_marine": {
+      "wind": "WSW force 5 midday, becoming force 4 evening",
+      "gusts_knots": 25,
+      "sea_state": "slight",
+      "swell": "small short W swell",
+      "visibility": "excellent",
+      "risk_level": "AMBER"
+    }
+  },
+  "tides": {
+    "calais": {
+      "date": "2026-06-15",
+      "high_water_1": {
+        "time_local": "00:31",
+        "height_m": 7.09,
+        "coefficient": 87
+      },
+      "low_water_1": {
+        "time_local": "08:02",
+        "height_m": 0.95
+      },
+      "risk_level": "AMBER",
+      "comment": "Départ proche de la basse mer côté français ; les courants doivent être validés par atlas SHOM/pilote."
+    }
+  },
+  "marine_traffic": {
+    "risk_level": "AMBER",
+    "comment": "Détroit très fréquenté : ferries, cargos, TSS. Bateau pilote obligatoire."
+  },
+  "wildlife_risk": {
+    "overall": "LOW_TO_MODERATE",
+    "jellyfish": {
+      "risk_level": "GREEN_AMBER",
+      "comment": "Risque non nul en juin, surtout avec eau plus chaude et blooms possibles."
+    },
+    "portuguese_man_o_war": {
+      "risk_level": "LOW",
+      "comment": "Surveillance visuelle nécessaire ; sonar/radar non fiables pour exclusion."
+    },
+    "seals": {
+      "risk_level": "LOW"
+    },
+    "dangerous_sharks": {
+      "risk_level": "VERY_LOW"
+    }
+  },
+  "risk_matrix": [
+    {
+      "risk": "Courants défavorables",
+      "probability": "HIGH",
+      "impact": "HIGH",
+      "level": "RED"
+    },
+    {
+      "risk": "Vent / rafales",
+      "probability": "MEDIUM",
+      "impact": "HIGH",
+      "level": "AMBER"
+    },
+    {
+      "risk": "Hypothermie",
+      "probability": "MEDIUM",
+      "impact": "HIGH",
+      "level": "AMBER"
+    },
+    {
+      "risk": "Trafic maritime",
+      "probability": "MEDIUM",
+      "impact": "CRITICAL",
+      "level": "AMBER"
+    },
+    {
+      "risk": "Méduses / faune",
+      "probability": "LOW",
+      "impact": "MEDIUM",
+      "level": "GREEN_AMBER"
+    }
+  ],
+  "kpi_thresholds": {
+    "go": {
+      "wind_knots_max": 15,
+      "gusts_knots_max": 20,
+      "wave_height_m_max": 1.0,
+      "visibility_nm_min": 2,
+      "thunderstorm": false
+    },
+    "no_go": {
+      "wind_knots_min": 20,
+      "gusts_knots_min": 25,
+      "wave_height_m_min": 1.5,
+      "visibility_nm_max": 1,
+      "thunderstorm": true
+    }
+  },
+  "sources": [
+    {
+      "name": "Met Office Shipping Forecast",
+      "type": "marine_weather",
+      "note": "Dover: wind southwest veering west 4 to 6, sea moderate occasionally slight, occasional drizzle."
+    },
+    {
+      "name": "Meteoconsult Marine Calais",
+      "type": "marine_weather",
+      "note": "WSW force 5 midday, force 4 evening, gusts 25 knots, slight sea, excellent visibility."
+    },
+    {
+      "name": "SHOM Calais tides",
+      "type": "tides",
+      "note": "15 June 2026: HW 00:31 7.09m coefficient 87; LW 08:02 0.95m."
+    },
+    {
+      "name": "Marine Conservation Society / NOAA",
+      "type": "wildlife",
+      "note": "Jellyfish and Portuguese man o' war risk context."
+    }
+  ]
+}
