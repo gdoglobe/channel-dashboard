@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Channel Crossing Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Channel Crossing Dashboard</h1>
+
+    <section class="hero">
+      <div>
+        <p class="label">Décision</p>
+        <h2 id="decision">Chargement...</h2>
+      </div>
+      <div>
+        <p class="label">Score</p>
+        <h2 id="score">--/100</h2>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Résumé exécutif</h3>
+        <p id="summary"></p>
+      </div>
+
+      <div class="card">
+        <h3>Points de vigilance</h3>
+        <ul id="watchItems"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Météo marine</h3>
+        <p id="weather"></p>
+      </div>
+
+      <div class="card">
+        <h3>Risques faune</h3>
+        <p id="wildlife"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Matrice des risques</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Risque</th>
+            <th>Probabilité</th>
+            <th>Impact</th>
+            <th>Niveau</th>
+          </tr>
+        </thead>
+        <tbody id="riskTable"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
