@@ -3,71 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marc PLACES Manche Indikator</title>
+  <title>Marc PLACES Manche Indicator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="logo">MP</div>
-    <a>Dashboard</a>
-    <a>Décision</a>
-    <a>Météo</a>
-    <a>Risques</a>
-    <a>Données</a>
-  </aside>
-
-  <main>
-    <header>
+  <main class="dashboard">
+    <header class="topbar">
       <div>
-        <h1>Marc Planche Manche Indikator</h1>
-        <p id="date"></p>
-        <a class="insta" href="https://www.instagram.com/marcplaces" target="_blank">
-          Instagram de Marc
-        </a>
+        <p class="eyebrow">Channel Decision Dashboard</p>
+        <h1>Marc PLACES Manche Indicator</h1>
+        <p id="reportDate"></p>
+        <a href="https://www.instagram.com/marcplaces" target="_blank">Instagram de Marc</a>
       </div>
-      <button onclick="downloadJSON()">Exporter JSON</button>
+      <div class="decisionBox">
+        <span>Décision</span>
+        <strong id="decision">--</strong>
+      </div>
     </header>
 
-    <section class="hero">
-      <div class="card dark">
-        <p>Décision</p>
-        <h2 id="decision">--</h2>
-      </div>
-      <div class="card">
-        <p>Score global</p>
-        <h2 id="score">--/100</h2>
-      </div>
-      <div class="card">
-        <p>Mission</p>
-        <h2 id="route">--</h2>
-      </div>
+    <section class="kpis">
+      <div class="kpi dark"><span>Score global</span><strong id="score">--</strong></div>
+      <div class="kpi"><span>Vent / rafales</span><strong id="windKpi">--</strong></div>
+      <div class="kpi"><span>Marée Calais</span><strong id="tideKpi">--</strong></div>
+      <div class="kpi"><span>Faune</span><strong id="wildlifeKpi">--</strong></div>
     </section>
 
     <section class="grid">
-      <div class="card">
-        <h3>Résumé exécutif</h3>
+      <article class="card wide">
+        <h2>Résumé décisionnel</h2>
         <p id="summary"></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h3>Météo marine</h3>
+      <article class="card">
+        <h2>Météo marine</h2>
         <p id="weather"></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h3>Risques faune</h3>
-        <p id="wildlife"></p>
-      </div>
+      <article class="card">
+        <h2>Marées / courants</h2>
+        <p id="tides"></p>
+      </article>
 
-      <div class="card">
-        <h3>Points de vigilance</h3>
+      <article class="card">
+        <h2>Points de vigilance</h2>
         <ul id="watchItems"></ul>
-      </div>
+      </article>
+
+      <article class="card">
+        <h2>Risques faune</h2>
+        <p id="wildlife"></p>
+      </article>
     </section>
 
     <section class="card">
-      <h3>Matrice des risques</h3>
-      <div class="table-wrap">
+      <h2>Matrice des risques</h2>
+      <div class="tableWrap">
         <table>
           <thead>
             <tr>
@@ -83,13 +73,8 @@
     </section>
 
     <section class="card">
-      <h3>Modifier les données</h3>
-      <p>Collez un nouveau JSON ici puis cliquez sur “Mettre à jour”.</p>
-      <textarea id="jsonEditor"></textarea>
-      <div class="actions">
-        <button onclick="updateFromForm()">Mettre à jour</button>
-        <button onclick="resetData()">Réinitialiser</button>
-      </div>
+      <h2>Sources</h2>
+      <ul id="sources"></ul>
     </section>
   </main>
 
