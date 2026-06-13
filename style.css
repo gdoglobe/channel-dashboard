@@ -1,133 +1,123 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: linear-gradient(135deg, #eef7ff, #f7efe5);
-  color: #14161f;
-  display: flex;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top left, #dbeafe, #f8fafc 45%, #eef2ff);
+  color: #111827;
 }
 
-.sidebar {
-  width: 220px;
-  min-height: 100vh;
-  background: #10131c;
-  color: white;
+.dashboard {
+  width: min(1180px, 100%);
+  margin: auto;
   padding: 24px;
-  position: fixed;
 }
 
-.logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #0ea5e9, #22c55e);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  margin-bottom: 32px;
-}
-
-.sidebar a {
-  display: block;
-  padding: 14px 0;
-  color: #cbd5e1;
-}
-
-main {
-  margin-left: 220px;
-  width: calc(100% - 220px);
-  padding: 32px;
-}
-
-header {
+.topbar {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  align-items: flex-start;
-  margin-bottom: 28px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
 }
 
 h1 {
-  font-size: 36px;
-  margin: 0;
-}
-
-#date {
-  color: #64748b;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1;
   margin: 8px 0;
 }
 
-.insta {
+a {
   color: #2563eb;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-button {
-  border: 0;
-  border-radius: 14px;
+#reportDate {
+  color: #64748b;
+  font-size: 17px;
+}
+
+.decisionBox,
+.kpi,
+.card {
+  background: rgba(255,255,255,.9);
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(15,23,42,.12);
+  padding: 24px;
+}
+
+.decisionBox {
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.decisionBox span,
+.kpi span {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.decisionBox strong {
+  font-size: 30px;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.kpi strong {
+  display: block;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.dark {
   background: #111827;
   color: white;
-  padding: 14px 18px;
-  font-weight: 700;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
-.card {
-  background: rgba(255,255,255,0.86);
-  border-radius: 28px;
-  padding: 26px;
-  box-shadow: 0 24px 60px rgba(15,23,42,0.12);
-  backdrop-filter: blur(14px);
-}
-
-.card.dark {
-  background: #111827;
-  color: white;
-}
-
-.card p {
-  font-size: 18px;
-  line-height: 1.5;
+.wide {
+  grid-row: span 2;
 }
 
 .card h2 {
-  font-size: 42px;
-  margin: 10px 0 0;
-}
-
-.card h3 {
-  font-size: 24px;
   margin-top: 0;
+  font-size: 25px;
 }
 
-ul {
+.card p,
+.card li {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
-.table-wrap {
+.tableWrap {
   overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
+  min-width: 650px;
 }
 
 th, td {
@@ -137,68 +127,37 @@ th, td {
   font-size: 16px;
 }
 
-.RED {
-  color: #dc2626;
-  font-weight: 900;
-}
+.RED { color: #dc2626; font-weight: 900; }
+.AMBER { color: #d97706; font-weight: 900; }
+.GREEN, .GREEN_AMBER { color: #16a34a; font-weight: 900; }
 
-.AMBER {
-  color: #d97706;
-  font-weight: 900;
-}
-
-.GREEN,
-.GREEN_AMBER {
-  color: #16a34a;
-  font-weight: 900;
-}
-
-textarea {
-  width: 100%;
-  height: 320px;
-  border-radius: 18px;
-  border: 1px solid #cbd5e1;
-  padding: 16px;
-  font-family: monospace;
-  font-size: 14px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-@media (max-width: 800px) {
-  body {
-    display: block;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  main {
-    margin-left: 0;
-    width: 100%;
-    padding: 22px;
-  }
-
-  header {
-    display: block;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-
-  .hero,
+@media (max-width: 900px) {
+  .topbar,
   .grid {
+    display: block;
+  }
+
+  .decisionBox,
+  .card {
+    margin-top: 18px;
+  }
+
+  .kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard {
+    padding: 18px;
+  }
+
+  .kpis {
     grid-template-columns: 1fr;
   }
 
-  button {
-    margin-top: 14px;
-    width: 100%;
+  .decisionBox strong,
+  .kpi strong {
+    font-size: 26px;
   }
 }
