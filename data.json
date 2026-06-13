@@ -1,94 +1,85 @@
 {
   "mission": {
-    "name": "English Channel Swim Crossing",
+    "name": "Marc PLACES Manche Indicator",
     "route": "Dover / UK to French coast",
-    "planned_departure_local": "2026-06-15T07:00:00+01:00",
-    "estimated_duration_hours": {
-      "min": 10,
-      "max": 18
-    },
-    "status": "GO_CONDITIONNEL",
-    "decision_score": 68,
-    "last_updated": "2026-06-13T00:00:00+01:00"
+    "report_for_date": "samedi 13 juin 2026",
+    "report_for_time": "16:00",
+    "planned_departure_local": "2026-06-13T16:00:00+01:00",
+    "decision_score": 61,
+    "status": "ATTENTE",
+    "last_updated": "2026-06-13T16:00:00+01:00"
   },
   "executive_decision": {
-    "recommendation": "GO_CONDITIONNEL",
-    "summary": "Fenêtre possible mais à confirmer avec le pilote, surtout à cause du vent W/SW, des courants de marée, du trafic maritime et de la température de l'eau.",
-    "critical_blockers": [],
+    "recommendation": "ATTENTE",
+    "summary": "Les conditions météo générales à terre sont correctes autour de Douvres et Calais, mais la décision de traversée reste en attente : départ à 16h défavorable à cause de la phase de marée vers la basse mer du soir, du courant à confirmer, du trafic maritime et du risque d’exposition longue en eau froide.",
     "watch_items": [
-      "rafales jusqu'à environ 25 noeuds côté Calais",
-      "courants de marée forts dans le Pas-de-Calais",
-      "eau froide pour une nage longue",
-      "trafic maritime dense"
+      "Départ prévu à 16h : proche de la marée basse du soir à Calais",
+      "Courants de marée à confirmer avec atlas SHOM et pilote",
+      "Trafic maritime dense dans le détroit",
+      "Eau froide pour une nage longue",
+      "Surveillance visuelle faune / méduses obligatoire"
     ]
   },
   "weather": {
     "dover": {
-      "forecast_date": "2026-06-15",
-      "07h": {
-        "sky": "intermittent clouds",
-        "air_temperature_c": 14
-      },
-      "day_trend": "cloudy through most of the day",
-      "source": "weather_forecast"
+      "air_temperature_c": 19,
+      "conditions": "Sunny / partly sunny",
+      "daily_high_c": 22,
+      "daily_low_c": 10
     },
     "calais_marine": {
-      "wind": "WSW force 5 midday, becoming force 4 evening",
-      "gusts_knots": 25,
-      "sea_state": "slight",
-      "swell": "small short W swell",
-      "visibility": "excellent",
-      "risk_level": "AMBER"
+      "wind_short": "Modéré",
+      "wind": "vent marin à confirmer avec bulletin côtier H-6",
+      "gusts_knots": null,
+      "sea_state": "à confirmer",
+      "visibility": "bonne à confirmer",
+      "details": "Douvres : environ 19°C et temps ensoleillé au moment du rapport. Prévision journalière : partiellement ensoleillé, maximum autour de 22°C. Les données fines de vent, rafales, houle et visibilité doivent être confirmées avec le bulletin marine officiel H-6."
     }
   },
   "tides": {
     "calais": {
-      "date": "2026-06-15",
-      "high_water_1": {
-        "time_local": "00:31",
-        "height_m": 7.09,
-        "coefficient": 87
-      },
-      "low_water_1": {
-        "time_local": "08:02",
-        "height_m": 0.95
-      },
-      "risk_level": "AMBER",
-      "comment": "Départ proche de la basse mer côté français ; les courants doivent être validés par atlas SHOM/pilote."
+      "date": "2026-06-13",
+      "low_water_1": "06:09",
+      "high_water_1": "11:18",
+      "low_water_2": "18:36",
+      "high_water_2": "23:38",
+      "coefficient_morning": 74,
+      "coefficient_evening": 79,
+      "current_phase": "Descendante",
+      "comment": "À 16h, la marée à Calais est descendante vers la basse mer de 18:36. C’est un facteur critique pour la trajectoire et les courants dans le Pas-de-Calais."
     }
   },
   "marine_traffic": {
     "risk_level": "AMBER",
-    "comment": "Détroit très fréquenté : ferries, cargos, TSS. Bateau pilote obligatoire."
+    "comment": "Le détroit du Pas-de-Calais est une zone de trafic intense. Bateau pilote obligatoire."
   },
   "wildlife_risk": {
     "overall": "LOW_TO_MODERATE",
+    "comment": "Risque faune faible à modéré : méduses possibles en juin, surveillance visuelle nécessaire. Radar et sonar ne permettent pas d’exclure de façon fiable les méduses ou physalies.",
     "jellyfish": {
-      "risk_level": "GREEN_AMBER",
-      "comment": "Risque non nul en juin, surtout avec eau plus chaude et blooms possibles."
+      "risk_level": "GREEN_AMBER"
     },
     "portuguese_man_o_war": {
-      "risk_level": "LOW",
-      "comment": "Surveillance visuelle nécessaire ; sonar/radar non fiables pour exclusion."
-    },
-    "seals": {
       "risk_level": "LOW"
-    },
-    "dangerous_sharks": {
-      "risk_level": "VERY_LOW"
     }
   },
   "risk_matrix": [
     {
-      "risk": "Courants défavorables",
+      "risk": "Fenêtre de marée défavorable",
       "probability": "HIGH",
       "impact": "HIGH",
       "level": "RED"
     },
     {
-      "risk": "Vent / rafales",
-      "probability": "MEDIUM",
+      "risk": "Courants non confirmés",
+      "probability": "HIGH",
       "impact": "HIGH",
+      "level": "RED"
+    },
+    {
+      "risk": "Trafic maritime",
+      "probability": "MEDIUM",
+      "impact": "CRITICAL",
       "level": "AMBER"
     },
     {
@@ -98,54 +89,24 @@
       "level": "AMBER"
     },
     {
-      "risk": "Trafic maritime",
-      "probability": "MEDIUM",
-      "impact": "CRITICAL",
-      "level": "AMBER"
-    },
-    {
       "risk": "Méduses / faune",
       "probability": "LOW",
       "impact": "MEDIUM",
       "level": "GREEN_AMBER"
     }
   ],
-  "kpi_thresholds": {
-    "go": {
-      "wind_knots_max": 15,
-      "gusts_knots_max": 20,
-      "wave_height_m_max": 1.0,
-      "visibility_nm_min": 2,
-      "thunderstorm": false
-    },
-    "no_go": {
-      "wind_knots_min": 20,
-      "gusts_knots_min": 25,
-      "wave_height_m_min": 1.5,
-      "visibility_nm_max": 1,
-      "thunderstorm": true
-    }
-  },
   "sources": [
     {
-      "name": "Met Office Shipping Forecast",
-      "type": "marine_weather",
-      "note": "Dover: wind southwest veering west 4 to 6, sea moderate occasionally slight, occasional drizzle."
+      "name": "Météo Dover",
+      "note": "Conditions actuelles utilisées : environ 19°C et temps ensoleillé."
     },
     {
-      "name": "Meteoconsult Marine Calais",
-      "type": "marine_weather",
-      "note": "WSW force 5 midday, force 4 evening, gusts 25 knots, slight sea, excellent visibility."
+      "name": "SHOM / marées Calais",
+      "note": "13 juin 2026 : BM 06:09, PM 11:18, BM 18:36, PM 23:38, coefficients 74/79."
     },
     {
-      "name": "SHOM Calais tides",
-      "type": "tides",
-      "note": "15 June 2026: HW 00:31 7.09m coefficient 87; LW 08:02 0.95m."
-    },
-    {
-      "name": "Marine Conservation Society / NOAA",
-      "type": "wildlife",
-      "note": "Jellyfish and Portuguese man o' war risk context."
+      "name": "Données opérationnelles",
+      "note": "Décision finale à confirmer par le pilote, le bulletin marine H-6 et les courants SHOM."
     }
   ]
 }
