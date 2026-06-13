@@ -1,7 +1,20 @@
 const LAT = 51.05;
 const LON = 1.45;
 
-const datePicker = document.getElementById("datePicker");
+let datePicker;
+
+document.addEventListener("DOMContentLoaded", () => {
+  datePicker = document.getElementById("datePicker");
+
+  setupDateLimit();
+
+  document.getElementById("loadBtn").addEventListener("click", () => {
+    loadSelectedDate();
+  });
+
+  loadSelectedDate();
+});
+
 
 function formatDate(d) {
   return d.toISOString().split("T")[0];
